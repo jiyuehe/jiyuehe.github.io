@@ -1,6 +1,6 @@
 # Contact
 Jiyue He, PhD student <br />
-jiyuehe<at>seas.upenn.edu <br />
+jiyuehe &lt; at &gt; seas.upenn.edu <br />
 
 University of Pennsylvania <br />
 School of Engineering and Applied Science <br />
