@@ -1,10 +1,10 @@
 # Contact
-Jiyue He, PhD student
-jiyuehe<at>seas.upenn.edu
+Jiyue He, PhD student <br />
+jiyuehe<at>seas.upenn.edu <br />
 
-University of Pennsylvania
-School of Engineering and Applied Science
-Department of Electrical and Systems Engineering
+University of Pennsylvania <br />
+School of Engineering and Applied Science <br />
+Department of Electrical and Systems Engineering <br />
 
 # Resume 
 [www.linkedin.com/in/jiyuehe](https://www.linkedin.com/in/jiyuehe/)
