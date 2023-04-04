@@ -10,4 +10,5 @@ Department of Electrical and Systems Engineering
 www.linkedin.com/in/jiyuehe
 
 # 
-/figure/CardiacPhysiome2023.png
+![alt text](/figure/CardiacPhysiome2023.png "Logo Title Text 1")
+
