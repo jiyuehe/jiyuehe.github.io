@@ -7,7 +7,7 @@ School of Engineering and Applied Science
 Department of Electrical and Systems Engineering
 
 # Resume 
-www.linkedin.com/in/jiyuehe
+[www.linkedin.com/in/jiyuehe](www.linkedin.com/in/jiyuehe)
 
 # 
 ![alt text](/figure/CardiacPhysiome2023.png "Logo Title Text 1")
