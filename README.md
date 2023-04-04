@@ -22,4 +22,7 @@ Acquiring accurate fiber data for real-time guidance tools using heart models in
 Authors: Jiyue He, Arkady Pertsov, Rahul Mangharam. <br />
 Accepted in Feb 2023 by Heart Rhythm 2023. <br />
 
+![](/figure/HRS2023.png)
+
+Electrophysiological heart models have shown great potential for assisting with arrhythmia ablation, but most existing models are computationally intensive and require high-resolution data from MRI or CT scans. To address these limitations, we developed a computationally efficient left atrium model that can be tuned for patient-specific parameters using only data from the electroanatomical mapping system. This model can run in real-time and is suitable for pre-ablation arrhythmia source exploration. The tuning process involves measuring local activation times from two far apart locations on the endocardium using Pentaray, Lasso, or ablation catheter, and takes only 15 seconds (on a personal laptop computer) to obtain a patient-specific heart model. During the ablation procedure, the model can be updated and re-tuned automatically. Our study showed that this fiber-independent left atrium model has good accuracy in predicting activations for both focal and rotor arrhythmias, demonstrating its potential as a useful tool for real-time ablation guidance.
 
