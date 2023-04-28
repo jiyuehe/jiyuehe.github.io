@@ -16,6 +16,8 @@ IEEE Transactions on Biomedical Engineering. This is selected as a featured arti
 
 ![](/figure/cancellation_effect.png)
 
+![](/figure/featured_articles.JPG)
+
 In the past two decades, there has been a trend towards developing detailed and realistic models of cardiac conduction. However, as models become more realistic, personalization and clinical application become more challenging due to limited availability of tissue and cellular scale data. One such challenge is obtaining information on myocardial fiber organization in the clinical setting. This study investigates a chimeric model of the left atrium that uses patient-specific atrial geometry but foreign fiber organization. The study found that even significant variations in fiber organization had a minimal impact on the spatio-temporal activation pattern during regular pacing. Activation maps were very similar across all tested fiber organizations for a given pacing site.
 
 ## Patient-Specific Heart Model Towards Atrial Fibrillation
