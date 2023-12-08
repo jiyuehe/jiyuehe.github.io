@@ -82,8 +82,8 @@ analytics:
 author:
   name             : "Jiyue He, PhD"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  bio              : "I received my PhD degree in engineering at the University of Pennsylvania. My expertise is in heart modeling for clinical arrhythmia ablation, and I am skilled in robotics."
+  location         : "Philadelphia, PA, United States"
   employer         :
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   googlescholar    : "http://yourfullgooglescholarurl.com"
