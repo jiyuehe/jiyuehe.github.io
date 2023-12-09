@@ -1,7 +1,8 @@
 # main links links
 main:
   - title: "Resume"
-    url: /cv/
+     url: https://jiyuehe.com/files/resume_Jiyue.pdf
+#    url: /cv/
 
   - title: "Publications"
     url: /publications/
