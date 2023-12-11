@@ -287,15 +287,15 @@ section {
   display: flex;
 }
 
-.about-pic {
+/* .about-pic {
   border-radius: 2rem;
-}
+} */
 
-.arrow {
+/* .arrow {
   position: absolute;
   right: -5rem;
   bottom: 2.5rem;
-}
+} */
 
 .details-container {
   padding: 1.5rem;
@@ -312,11 +312,11 @@ section {
   height: 80%;
 }
 
-.section__pic-container {
+/* .section__pic-container {
   height: 400px;
   width: 400px;
   margin: auto 0;
-}
+} */
 
 /* EXPERIENCE SECTION */
 
