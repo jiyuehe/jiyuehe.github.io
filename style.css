@@ -176,6 +176,10 @@ section {
   margin: auto 0;
 }
 
+.profile-pic {
+  border-radius: 2rem;
+}
+
 .section__text {
   align-self: center;
   text-align: center;
@@ -190,7 +194,7 @@ section {
 }
 
 .section__text__p2 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
