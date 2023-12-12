@@ -1,13 +1,8 @@
 @media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
   .about-containers {
     flex-wrap: wrap;
   }
-  #contact,
-  #projects {
+  #profile, #contact, #projects {
     height: fit-content;
   }
 }
@@ -27,9 +22,6 @@
   .section-container {
     display: block;
   }
-  /* .arrow {
-    display: none;
-  } */
   section,
   .section-container {
     height: fit-content;
@@ -45,11 +37,10 @@
 @media screen and (max-width: 600px) {
   #contact,
   footer {
-    height: 40vh;
+    height: fit-content;
   }
   #profile {
-    height: 83vh;
-    margin-bottom: 0;
+    height: fit-content;
   }
   article {
     font-size: 1rem;

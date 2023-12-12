@@ -36,7 +36,7 @@ nav,
 nav {
   justify-content: space-around;
   align-items: center;
-  height: 17vh;
+  height: 10vh;
 }
 
 .nav-links {
@@ -149,8 +149,7 @@ a:hover {
 /* SECTIONS */
 
 section {
-  padding-top: 4vh;
-  height: 96vh;
+  padding-bottom: 5vh;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -166,7 +165,6 @@ section {
   display: flex;
   justify-content: center;
   gap: 5rem;
-  height: 80vh;
 }
 
 .section__pic-container {
@@ -267,15 +265,15 @@ section {
 
 /* ABOUT SECTION */
 
-#about {
+/* #about {
   position: relative;
-}
+} */
 
 .about-containers {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
-}
+} 
 
 .about-details-container {
   justify-content: center;
@@ -374,7 +372,6 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
 }
 
 .contact-info-upper-container {
@@ -411,7 +408,6 @@ article .icon {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
   margin: 0 1rem;
 }
 
