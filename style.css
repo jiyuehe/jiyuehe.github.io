@@ -83,7 +83,7 @@ section {
   display: flex;
   height: 260px;
   width: 260px;
-  margin: auto 0;
+  margin: auto auto;
 }
 
 .profile-pic {
