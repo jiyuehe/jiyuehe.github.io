@@ -58,6 +58,10 @@ a:hover {
   text-decoration-color: #00b7ff;
 }
 
+div {
+  text-align: center;
+}
+
 /* SECTIONS */
 
 section {
