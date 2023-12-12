@@ -52,10 +52,10 @@ a {
 }
 
 a:hover {
-  color: grey;
+  color: #00b7ff;
   text-decoration: underline;
-  text-underline-offset: 1rem;
-  text-decoration-color: rgb(181, 181, 181);
+  text-underline-offset: 0.2rem;
+  text-decoration-color: #00b7ff;
 }
 
 /* SECTIONS */
