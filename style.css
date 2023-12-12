@@ -205,7 +205,6 @@ section {
 
 .section-container {
   gap: 4rem;
-  /* height: 80%; */
 }
 
 /* EXPERIENCE SECTION */
@@ -280,28 +279,6 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
-
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  margin: 2rem auto;
-}
-
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-.contact-info-container p {
-  font-size: larger;
-}
-
-.contact-icon {
-  cursor: default;
 }
 
 /* FOOTER SECTION */
