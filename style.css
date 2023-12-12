@@ -298,11 +298,11 @@ footer p {
 
 /* GALLERY */
 div.gallery {
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
 }
 
 div.gallery:hover {
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
 }
 
 div.gallery img {
@@ -320,21 +320,23 @@ div.desc {
 }
 
 .responsive {
-  padding: 0 6px;
+  padding: 0 20px;
   float: left;
   width: 24.99999%;
+  margin: 10px 0;
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1350px) {
   .responsive {
     width: 49.99999%;
-    margin: 6px 0;
+    margin: 10px 0;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .responsive {
     width: 100%;
+    margin: 10px 0;
   }
 }
 
