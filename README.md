@@ -1,3 +1,3 @@
 My personal website
-- jiyuehe.github.io
-- jiyuehe.com
+- https://jiyuehe.github.io
+- https://jiyuehe.com/
