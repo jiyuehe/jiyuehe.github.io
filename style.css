@@ -322,14 +322,14 @@ div.desc {
   margin: 10px 0;
 }
 
-@media only screen and (max-width: 1350px) {
+@media only screen and (max-width: 1370px) {
   .responsive {
     width: 49.99999%;
     margin: 10px 0;
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 770px) {
   .responsive {
     width: 100%;
     margin: 10px 0;
