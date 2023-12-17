@@ -1,26 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jiyue He</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
+  <script src="components/header.js" type="text/javascript" defer></script>
+  <script src="components/navigation.js" type="text/javascript" defer></script>
+  <script src="components/footer.js" type="text/javascript" defer></script>
+
+  <header-component></header-component>
 
   <body>
-    <nav id="desktop-nav">
-      <div>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="hobbies.html">Hobbies</a></li>
-        </ul>
-      </div>
-    </nav>
+    <navigation-component></navigation-component>
 
     <section id="experience">
       <h1 class="title">Publications (first author)</h1>
@@ -98,12 +85,6 @@
       <p>Issued by Guangdong University of Technology</p>
     </section>
 
-    <footer>
-      <p>Copyright &#169; <span id="year"></span> Jiyue He. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-      document.getElementById("year").innerHTML = new Date().getFullYear();
-    </script>
+    <footer-component></footer-component>
   </body>
 </html>
