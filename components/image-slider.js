@@ -1,16 +1,6 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
-function plusSlides(n) {
-    // slideIndex = slideIndex + n;
-    // showSlides(slideIndex);
-}
-
-function currentSlide(n) {
-    // slideIndex = n;
-    // showSlides(slideIndex);
-}
-
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
