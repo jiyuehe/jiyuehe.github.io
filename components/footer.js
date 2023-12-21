@@ -8,6 +8,7 @@ class Footer extends HTMLElement {
       <footer>
       <p>Copyright &#169; Jiyue He. All Rights Reserved.</p>
       </footer>
+      <br>
       `;
     }
   }

@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script src="components/header.js" type="text/javascript" defer></script>
-  <script src="components/navigation.js" type="text/javascript" defer></script>
-  <script src="components/footer.js" type="text/javascript" defer></script>
+<script src="components/header.js" type="text/javascript" defer></script>
+<script src="components/navigation.js" type="text/javascript" defer></script>
+<script src="components/footer.js" type="text/javascript" defer></script>
 
-  <header-component></header-component>
+<header-component></header-component>
 
-  <body>
-    <navigation-component></navigation-component>
+<body>
+<navigation-component></navigation-component>
 
-    <section id="projects">
-      <h1 class="title">Research</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">abc</h2>
-            <div class="btn-container">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<h1 class="title">Research</h1>
 
-    <footer-component></footer-component>
-  </body>
+<table>
+  <tr>
+    <td>
+      <a href="atrial_fibrillation_challenges.html">
+        <h2 style="text-align: center; margin-bottom: 10px; margin-left: 20px; margin-right: 20px;">Atrial fibrillation ablation challenges</h2>
+        <img src="./assets/research/operating_room.PNG"/>
+      </a>
+      <p>Background knowledge of left atrium arrhythmia, catheter ablation surgery, and atrial arrhythmia ablation challenges.</p>
+      <p>More details: <a href="atrial_fibrillation_challenges.html">please click here.</a></p>
+      <br>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="fiber_effect.html">
+        <h2 style="text-align: center; margin-bottom: 10px; margin-left: 20px; margin-right: 20px;">Myocardial fiber effects on arrhythmia activation patterns</h2>
+        <img src="./assets/image_place_holder.png"/>
+      </a>
+      <p>Myocardial fiber data is not available for clinical arrhythmia ablation. We would like to find a way to compensate for the lack of fiber data. To do that, we need to first learn the effects of fiber on activation patterns.</p>
+      <p>More details: <a href="fiber_effect.html">please click here.</a></p>
+      <br>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="patient_specific_heart_modeling.html">
+        <h2 style="text-align: center; margin-bottom: 10px; margin-left: 20px; margin-right: 20px;">Patient-specific heart modeling for arrhythmia ablation</h2>
+        <img src="./assets/image_place_holder.png"/>
+      </a>
+      <p>Explain the heart model equations, derive the discrete form the heart model equations for programming, show arrhythmia simulation examples, patient-specific parameter tuning, and validation with patient data.</p>
+      <p>More details: <a href="patient_specific_heart_modeling.html">please click here.</a></p>
+      <br>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="clinical_data_processing_and_arrhythmia_detection.html">
+        <h2 style="text-align: center; margin-bottom: 10px; margin-left: 20px; margin-right: 20px;">Clinical data processing and arrhythmia source detection</h2>
+        <img src="./assets/image_place_holder.png"/>
+      </a>
+      <p>Describe the tools, user interfaces, and algorithms we developed for processing clinical data.</p>
+      <p>More details: <a href="clinical_data_processing_and_arrhythmia_detection.html">please click here.</a></p>
+      <br>
+    </td>
+  </tr>
+</table>
+
+<br>
+<footer-component></footer-component>
+</body>
 </html>
