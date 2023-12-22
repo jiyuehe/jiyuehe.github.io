@@ -140,7 +140,7 @@ td {
 
 .navbar a {
   float: left;
-  font-size: 16px;
+  font-size: 20px;
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 14px 16px;
@@ -153,7 +153,7 @@ td {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 20px;  
   border: none;
   outline: none;
   color: rgb(0, 0, 0);
@@ -198,6 +198,6 @@ td {
     font-size: 12px;
   }
   .dropdown .dropbtn {
-    font-size: 12px;  
+    font-size: 12px;
   }
 }
