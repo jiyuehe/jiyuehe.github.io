@@ -194,7 +194,10 @@ td {
 }
 
 @media screen and (max-width: 800px) {
-  .nav-bar a {
-    font-size: 0.8rem;
+  .navbar a {
+    font-size: 12px;
+  }
+  .dropdown .dropbtn {
+    font-size: 12px;  
   }
 }
