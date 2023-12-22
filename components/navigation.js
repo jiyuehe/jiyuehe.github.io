@@ -13,10 +13,11 @@ class Navigation extends HTMLElement {
       <a href="index.html">Home</a>
 
       <div class="dropdown">
-        <button class="dropbtn"><a href="research.html">Research</a>
+        <button class="dropbtn">Research
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
+        <a href="research.html">Research summary</a>
           <a href="atrial_fibrillation_challenges.html">Atrial fibrillation ablation challenges</a>
           <a href="fiber_effect.html">Myocardial fiber effects on arrhythmia activation patterns</a>
           <a href="patient_specific_heart_modeling.html">Patient-specific heart modeling for arrhythmia ablation</a>
