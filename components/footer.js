@@ -6,7 +6,7 @@ class Footer extends HTMLElement {
     connectedCallback() {
       this.innerHTML = `
       <footer style="text-align: center">
-      <p>Copyright &#169; Jiyue He. All Rights Reserved.</p>
+      <p>Copyright &#169; Jay He. All Rights Reserved.</p>
       </footer>
       <br>
       `;
