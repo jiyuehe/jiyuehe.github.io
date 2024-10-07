@@ -10,6 +10,8 @@ class Navigation extends HTMLElement {
     <td>
 
     <div class="navbar">
+      <a href="index.html"><img src="./assets/penn_logo.png" style="width: 100px;"></a>
+
       <a href="index.html">Home</a>
 
       <div class="dropdown">
@@ -26,7 +28,7 @@ class Navigation extends HTMLElement {
       </div> 
 
       <a href="publications.html">Publications</a>
-      <a href="contact.html">Contact</a>
+      <!-- <a href="contact.html">Contact</a> -->
       <a href="hobbies.html">Hobbies</a>
     </div>
 
