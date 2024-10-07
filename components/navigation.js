@@ -15,7 +15,7 @@ class Navigation extends HTMLElement {
       <a href="index.html">Home</a>
 
       <div class="dropdown">
-        <button class="dropbtn">Research
+        <button class="dropbtn">Projects
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
@@ -29,7 +29,7 @@ class Navigation extends HTMLElement {
 
       <a href="publications.html">Publications</a>
       <!-- <a href="contact.html">Contact</a> -->
-      <a href="hobbies.html">Hobbies</a>
+      <!-- <a href="hobbies.html">Hobbies</a> -->
     </div>
 
     </td>
