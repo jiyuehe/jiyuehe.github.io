@@ -44,6 +44,19 @@ a:hover {
   background: #00b7ff;
 }
 
+/* table */
+table {
+  margin-left: auto; 
+  margin-right: auto; 
+  max-width: 1000px;
+}
+
+td {
+  border: 0px solid rgb(220, 220, 220); /* ########## border set to 0px to remove it ########## */
+  border-collapse: collapse;
+  padding: 15px;
+}
+
 /* GALLERY */
 div.gallery img {
   width: 100%;
@@ -71,19 +84,6 @@ div.desc {
     width: 100%;
     margin: 10px 0;
   }
-}
-
-/* table */
-table {
-  margin-left: auto; 
-  margin-right: auto; 
-  max-width: 1000px;
-}
-
-td {
-  border: 0px solid rgb(220, 220, 220); /* ########## border set to 0px to remove it ########## */
-  border-collapse: collapse;
-  padding: 15px;
 }
 
 /* dropdown menu */
