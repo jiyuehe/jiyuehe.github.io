@@ -5,10 +5,14 @@ class Footer extends HTMLElement {
   
     connectedCallback() {
       this.innerHTML = `
-      <footer style="text-align: center">
-      <p>Copyright &#169; Jay He. All Rights Reserved.</p>
-      </footer>
-      <br>
+        <table>
+          <tr>
+            <td colspan="2">
+              <br />
+              <p>Copyright &#169; Jay He. All Rights Reserved.</p>
+            </td>
+          </tr>
+        </table>
       `;
     }
   }

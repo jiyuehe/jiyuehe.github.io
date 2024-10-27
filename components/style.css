@@ -52,7 +52,7 @@ table {
 }
 
 td {
-  border: 0px solid rgb(220, 220, 220); /* ########## border set to 0px to remove it ########## */
+  border: 1px solid rgb(220, 220, 220); /* ########## border set to 0px to remove it ########## */
   border-collapse: collapse;
   padding: 15px;
 }
