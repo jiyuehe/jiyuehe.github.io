@@ -8,13 +8,11 @@ class Navigation extends HTMLElement {
     <table>
       <tr>
         <td>
-        <a><img src="./assets/penn_logo.png" style="width: 100px;"></a>
+          <img src="./assets/penn_logo.png" style="width: 100px;">
         </td>
 
         <td>
           <div class="navbar">
-            
-
             <a href="index.html">Home</a>
 
             <div class="dropdown">
