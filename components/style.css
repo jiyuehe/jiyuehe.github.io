@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -22,28 +17,6 @@ a:hover {
   text-decoration-color: #00b7ff;
 }
 
-.title {
-  font-size: 1.8rem;
-  text-align: center;
-}
-
-.btn {
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  width: 7rem;
-  border-radius: 1rem;
-}
-
-.btn-color {
-  border: rgb(0, 0, 0) 0.1rem solid;
-  background: #fff;
-}
-
-.btn-color:hover {
-  cursor: pointer;
-  background: #00b7ff;
-}
-
 /* table */
 table {
   margin-left: auto; 
@@ -52,37 +25,24 @@ table {
 }
 
 td {
-  border: 0px solid rgb(220, 220, 220); /* ########## border set to 0px to remove it ########## */
-  border-collapse: collapse;
+  border: 0px solid rgb(220, 220, 220); /* ########## border set to 0px to remove it */
   padding: 5px;
 }
 
 /* GALLERY */
 div.gallery img {
   width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 5px;
-  text-align: center;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .responsive {
   padding: 0 20px;
   float: left;
   width: 33%;
-  margin: 10px 0;
 }
 
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 750px) {
   .responsive {
-    width: 100%;
-    margin: 10px 0;
+    width: 90%;
   }
 }
 
