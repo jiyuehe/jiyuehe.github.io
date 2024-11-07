@@ -29,6 +29,8 @@ class Navigation extends HTMLElement {
             </div> 
 
             <a href="publications.html">Publications</a>
+
+            <a href="awards.html">Awards</a>
           </div>
         </td>
       </tr>

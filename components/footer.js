@@ -7,14 +7,14 @@ class Footer extends HTMLElement {
       this.innerHTML = `
         <table>
           <tr>
-            <td colspan="2" width="1000">
+            <td width="1000">
               <br />
               <hr>
             </td>
           </tr>
 
           <tr>
-            <td colspan="2">
+            <td>
               <p align="center">Copyright &#169; Jay He. All Rights Reserved.</p>
             </td>
           </tr>
