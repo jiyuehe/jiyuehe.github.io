@@ -20,11 +20,9 @@ class Navigation extends HTMLElement {
                 <i class="fa fa-caret-down"></i>
               </button>
               <div class="dropdown-content">
-              <a href="research.html">Research summary</a>
-                <a href="atrial_fibrillation_challenges.html">Atrial fibrillation ablation challenges</a>
-                <a href="fiber_effect.html">Myocardial fiber effects on arrhythmia activation patterns</a>
-                <a href="patient_specific_heart_modeling.html">Patient-specific heart modeling for arrhythmia ablation</a>
-                <a href="clinical_data_processing_and_arrhythmia_detection.html">Clinical data processing and arrhythmia source detection</a>
+                <a href="clinical_data_processing_and_arrhythmia_detection.html">Clinical Data Processing and Arrhythmia Source Detection</a>
+                <a href="patient_specific_heart_modeling.html">Model Patient-specific Heart for Arrhythmia Ablation</a>
+                <a href="fiber_effect.html">Model Myocardial Fiber Effects on Arrhythmia Patterns</a>
               </div>
             </div> 
 
