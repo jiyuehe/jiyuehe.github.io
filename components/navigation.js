@@ -8,10 +8,6 @@ class Navigation extends HTMLElement {
     <table>
       <tr>
         <td>
-          <img src="./assets/penn_logo.png" style="width: 100px;">
-        </td>
-
-        <td>
           <div class="navbar">
             <a href="index.html">Home</a>
 
