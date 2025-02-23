@@ -17,8 +17,16 @@ class Navigation extends HTMLElement {
               </button>
               <div class="dropdown-content">
                 <a href="clinical_processing_arrhythmia_detection.html">Clinical Data Processing and Arrhythmia Source Detection</a>
+
                 <a href="patient_specific_heart_modeling.html">Patient-specific Digital Heart for Arrhythmia Ablation</a>
+
                 <a href="fiber_effect.html">Myocardial Fiber Effects on Arrhythmia Patterns</a>
+
+                <a href="statistical_activation_mapping.html">Atrial Fibrillation Statistical Activation Mapping</a>
+
+                <a href="robotics.html">Robotics and Electronics</a>
+
+                <a href="signature_verification.html">Handwritten Signature Verification</a>
               </div>
             </div> 
 
