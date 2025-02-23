@@ -24,9 +24,9 @@ class Navigation extends HTMLElement {
 
                 <a href="statistical_activation_mapping.html">Atrial Fibrillation Statistical Activation Mapping</a>
 
-                <a href="robotics.html">Robotics and Electronics</a>
-
                 <a href="signature_verification.html">Handwritten Signature Verification</a>
+
+                <a href="robotics.html">Robotics and Electronics</a>
               </div>
             </div> 
 
