@@ -41,7 +41,7 @@ class Navigation extends HTMLElement {
               <div class="dropdown-content">
                 <a href="daily.html">Daily</a>
                 <a href="offroading.html">Off-roading</a>
-                <a href="house_renovation.html">Renovated a House</a>
+                <a href="house_renovation.html">House Renovation</a>
               </div>
             </div> 
           </div>
