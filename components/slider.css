@@ -37,8 +37,8 @@
 }
 
 .thumbnail {
-    width: 120px;
-    height: 80px;
+    width: 100px;
+    height: 60px;
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
