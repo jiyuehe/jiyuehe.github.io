@@ -60,39 +60,3 @@
     height: 100%;
     object-fit: cover;
 }
-
-.nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-button {
-    background: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s ease;
-}
-
-button:hover {
-    background: #45a049;
-}
-
-.auto-play {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.auto-play label {
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.auto-play input {
-    margin-right: 5px;
-    cursor: pointer;
-}
