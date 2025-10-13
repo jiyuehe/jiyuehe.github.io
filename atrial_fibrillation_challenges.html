@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="components/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="components/header.js" type="text/javascript"></script>
+<script src="components/navigation.js" type="text/javascript"></script>
+<script src="components/footer.js" type="text/javascript"></script>
+<link rel="icon" type="image/x-icon" href="./assets/misc/icon.png">
+
+<header-component></header-component>
+
+<body>
+<navigation-component></navigation-component>
+
+<table>
+    <tr>
+        <td width="1000">
+          <hr>
+          <br />
+          <h3 style="text-align: center; font-weight:normal;">Atrial Fibrillation Ablation Challenges</h3>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <p>A healthy heart has a regular sequence of activations, while a diseased heart has irregular activations, which leads to insufficient plumbing of blood. In the United States, it is estimated that 12 million people will have atrial fibrillation in 2030. It contributes to about 160 thousand deaths each year. Symptoms include fast heartbeat, chest pain, dizziness, shortness of breath, etc. The main treatments are: Use medicines to control the heart's rhythm and rate; Surgery; Medicine and healthy lifestyle changes to manage atrial fibrillation risk factors. Catheter ablation is a minimally invasive surgery, which catheters are inserted into the left atrium for mapping and ablation. The tip of the ablation catheter can generate heat to kill diseased cells, to restore normal activation.</p>
+
+            <table style="margin-left: auto; margin-right: auto;">
+                <th><img src="assets/atrial_fibrillation_challenges/healthy_vs_diseased_heart.JPG" style=" width: 100%; height: 100%;"></th>
+                <th><img src="assets/atrial_fibrillation_challenges/catheter_ablation.JPG" style="width: 100%; height: 100%;"></th>
+            </table>
+
+            <p>Here are some photos of the catheter ablation operating room. Thers is the patient table behind the glass where the physician operate the procedure. Technician work with the physician via the mapping system. The mapping system displays spatial and temporal data to help the physician find arrhythmia source locations.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/operating_room.PNG" style="width: 90%;">
+            </div>
+
+            <p>Catheters are passed through a vein to reach the heart. They may be inserted in the groin, shoulder or neck. The 3D mapping system takes in electrograms from the catheters and creates colored maps to help the physician pinpoint the abnormal tissue. As illustrates in the figure below, there are ablations create a line of block to the abnormal activations from the pulmonary veins, and there is a cluster of ablations stop abnormal activations from a focal source.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/ablations.JPG" style="width: 90%;">
+            </div>
+
+            <p>A typical ablation procedure runs for 3 to 6 hours. The first 1 to 2 hours is the preparation step: The patient is getting sedation anesthesia. Physician, nurses and technicians prepare the hardware and software. Then the physician inserts catheters into the patient's left atrium. Then an initial map is acquired. Usually this will be a voltage map, which displays scar tissue locations. Based on scar tissue locations, standard ablations such as pulmonary vein isolation is done first, this takes 1 to 2 hours. If that does not terminate arrhythmia, then additional ablations will be needed: it will be a back and forth of ablation and mapping until arrhythmia can no longer be induced. This step can take a few hours. At the end of the procedure, catheters are removed, and nurses clean up the operating room. This step takes about an hour.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/ablation_procedure.PNG" style="width: 90%;">
+            </div>
+
+            <p>Atrial arrhythmia ablation is challenging. Arrhythmia recurrence within 12 months is about 45%. There are mainly 3 challenges to build an ablation guidance system. The first challenge is about data sampling. A map usually consists of 2,000 electrode samples. One problem is that these samples are temporally asynchronous: Sampling a map is done region by region, however, the pattern of the rhythm can change during the 10-20 minutes of mapping. Another problem is that these samples are spatially non-uniform: Maneuvering and keeping the catheter stable at a location is technically challenging, as a result, some regions overlap while others disjoint. </p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/recording_segment.PNG" style="width: 90%;">
+            </div>
+
+            <p>There can be bad electrodes, or poor electrode-tissue contact issues. As illustrates below, Figure (a) shows an example of good catheter placement. Figure (b) shows an example that the catheter splines are twisted, which can cause electrodes to collide with each other, resulting in noise. There can be a lot of catheter movements. Figure (c) shows an example of spatially stable catheter position. Figure (d) shows an example of spatially unstable catheter position. The problem with unstable catheter position is that the electrogram recordings will no longer have any meaning, because they will not be from the same location. </p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/catheter_problems.JPG" style="width: 60%;">
+            </div>
+
+            <p>On a clean electrogram, the activation timing is easy to detect. On a fractionated electrogram, multiple local activations are detected by the electrode, it is hard to reduce to a set of single activation times.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/fractionated_egm.PNG" style="width: 40%;">
+            </div>
+
+            <p>Bipolar electrogram has a direction dependency problem. If the activation wave direction is parallel to the bipolar orentation, the bipolar electrode records a strong signal. However, if the activation wave direction is perpendicular to the bipolar orentation, the bipolar electrode records almost nothing. </p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/unipolar_bipolar.PNG" style="width: 90%;">
+            </div>
+
+            <p>Interpolation can introduce data outliers. We need to interpolate data from the blue dots to the mesh. We can see that in the yellow circle, there are small greenish areas which do not make too much sense, these can be interpolation errors.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/interpolation_error.PNG" style="width: 40%;">
+            </div>
+
+            <p>Ventricle activation signals (QRS waves) can be large in the atrium electrograms, which makes detecting atrial activations difficult.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/qrs.PNG" style="width: 90%;">
+            </div>
+
+            <p>Identifying arrhythmia sources is difficult. The biggest question is where to ablate? Voltage maps can help us find scar tissue distribution. But that depends on applying a correct voltage threshold. Activation maps can help us find out focal source locations. But that depends on choosing a correct time window of interest. Phase singularity tracking can help us find out rotor source locations. But tracking the rotor center is not a trivial task. Oftentimes, multiple arrhythmia sources appear simultaneously, perpetuating atrial fibrillation.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/atrial_fibrillation_challenges/difficulty_of_source_detection.PNG" style="width: 90%;">
+            </div>
+        </td>
+    </tr>
+</table>
+
+<footer-component></footer-component>
+</body>
+</html>

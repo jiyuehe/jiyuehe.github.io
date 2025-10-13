@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="components/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="components/header.js" type="text/javascript"></script>
+<script src="components/navigation.js" type="text/javascript"></script>
+<script src="components/footer.js" type="text/javascript"></script>
+<link rel="icon" type="image/x-icon" href="./assets/misc/icon.png">
+
+<header-component></header-component>
+
+<body>
+<navigation-component></navigation-component>
+
+<table>
+    <tr>
+        <td width="1000">
+          <hr>
+          <br />
+          <h3 style="text-align: center; font-weight:normal;">Algorithm Development: Clinical Data Processing and Arrhythmia Source Detection</h3>
+        </td>
+      </tr>
+
+    <tr>
+        <td>
+            <p>These are examples of clinical data files. These files include 3D triangular mesh, catheter locations, electrograms, and others. Clinical data are exported from the mapping system. Atrium mesh and electrograms need further processing.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/clinical_data.PNG" style="width: 90%;">
+            </div>
+            
+            <p>This is how atrium geometry is created. As the catheter sweeps through the inside of the left atrium, the atrium geometry is created little by little.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/create_mesh.PNG" style="width: 90%;">
+            </div>
+            
+            <p>This 3D triangular mesh often has defects: For example, deep concave holes, intersecting triangular faces, non-referenced vertices and more. We developed an automated program to process it. The refined 3D mesh will not contain any defect, and the size of the triangles will be uniform.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/refine_geometry.PNG" style="width: 90%;">
+            </div>
+            
+            <p>We need to cut the pulmonary veins and the mitral valve. We developed a user interface for that. Here we have selected one pulmonary vein, which is marked blue, then we can remove it from the mesh.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/cut_holes.PNG" style="width: 90%;">
+            </div>
+            
+            <p>This is the algorithm for selecting a region of tissue. First, some boundary vertices and a center vertex are selected. Then, the boundary vertices are linked to form the boundary line. Then, starting from the center point, it grows outwards until it hits the boundary. So that the vertices inside the boundary are selected. We can remove the selected vertices, that will be deleting them. Or, we can fill in new triangles to flatten that region. These figures in the bottom row show the process of filling in new triangles. By doing so, we can remove spiky or deep concave regions.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/select_region.PNG" style="width: 90%;">
+                <img src="assets/clinical_data_processing/fill_hole.PNG" style="width: 90%;">
+            </div>
+            
+            <p>We often have atrial electrograms with ventricle QRS interference. We developed a QRS removal algorithm. First, the median signal is subtracted from each electrogram. Then, the QRS timing is found on the 12 surface electrograms, and the timing is refined using coronary sinus electrograms. Lastly, around the QRS timing, QRS templates of the mapping catheter electrograms are created and subtracted.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/QRS_removal_algorithm.PNG" style="width: 60%;">
+            </div>
+            
+            <p>These are examples of before and after QRS removal. We can see that in figure (b), the ventricle activations are removed, and all the atrium activations preserved.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/recording_2_QRS_subtration.PNG" style="width: 90%;">
+            </div>
+            
+            <p>After electrogram noise is removed, we apply an activation timing detection algorithm. First, we process the original electrogram, take its absolute value and smooth it, and find the rough activation timings. Then around these rough timings, we create a median template of the electrogram. Next, cross correlation the template to the electrogram, and find the peaks of the correlation coefficients. Sometimes, we will find long intervals, we will check the correlation in that interval, and determine if additional activation needs to be added.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/activation_detection.PNG" style="width: 90%;">
+            </div>
+            
+            <p>The figure below shows the activation detection results.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/2_activation_timing.PNG" style="width: 60%;">
+            </div>
+            
+            <p>Electroanatomical maps are very useful tools for guiding ablations. This is the process to create them. It starts with processing patient data. From the electrogram, we can derive voltage, dominant frequency, fractionation, and synchrony. Then we detect the activation timings, which we can derive local activation time and cycle length. From the activation timing, we can create an activation movie, which we can derive conduction velocity and phase singularity. Each of these derived values can be interpolated to the atrium mesh. Then we convert the values to color, and it becomes a map.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/create_map.PNG" style="width: 90%;">
+                <img src="assets/clinical_data_processing/voltage_map.PNG" style="width: 90%;">
+            </div>
+            
+            <p>Voltage map uses color to represent the electrogram amplitude. Low voltage signifies scar. Scars do not conduct well, and complex scar distributions can lead to complex activation waves. Therefore, complex scar regions are ablation targets. As shown in this clinical example. It is a pulmonary vein isolation redo patient. The pulmonary veins were isolated but some scars regrew to be conductive, therefore, new ablations are needed to create the line of block again.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/voltage_map_ablation.PNG" style="width: 60%;">
+            </div>
+            
+            <p>Local activation time map uses color to represent the sequence of activation. Normal activation originates from the Bachmann Bundle region. If the earliest activation site is elsewhere, then we need to ablation it. As shown in this clinical example, the focal source is marked in red, and ablations have been given there.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/clinical_lat_map.PNG" style="width: 60%;">
+            </div>
+            
+            <p>Although the activation time map is very useful, it can be confusing too. The choice of the time window of interest can dramatically affect how the activation map looks. Here is an example to illustrate. Figure (a1) and (a2) are activation maps derived from the same activation. We can see that these 2 maps look very different, only because their choice of time window of interest are different. Physicians are trained to look for the red area as the focal source. But the woi choice is not always the best. This is not a problem for a computer program. All it needs is to find the local minima. This shows that our system can make what is invisible visible.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/focal_source_detection.PNG" style="width: 90%;">
+            </div>
+            
+            <p>Our system can provide various ablation guidance maps. Here are some examples. Having multiple maps of different features is helpful for identifying arrhythmia source locations. If several maps point to the same location, Then we will have high confidence that ablating that location can terminate at least the regional arrhythmia.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/clinical_data_processing/useful_maps.PNG" style="width: 90%;">
+            </div>
+        </td>
+    </tr>
+</table>
+
+<footer-component></footer-component>
+</body>
+</html>

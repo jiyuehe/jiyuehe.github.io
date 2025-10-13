@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="components/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="components/header.js" type="text/javascript"></script>
+<script src="components/navigation.js" type="text/javascript"></script>
+<script src="components/footer.js" type="text/javascript"></script>
+<link rel="icon" type="image/x-icon" href="./assets/misc/icon.png">
+
+<header-component></header-component>
+
+<body>
+<navigation-component></navigation-component>
+
+<table>
+    <tr>
+        <td width="1000">
+          <hr>
+          <br />
+          <h3 style="text-align: center; font-weight:normal;">Modeling: Myocardial Fiber Effects on Arrhythmia Patterns</h3>
+        </td>
+      </tr>
+
+    <tr>
+        <td>
+            <p>Our heart model needs to be patient-specific. Therefore, we process clinical data and feed them into the heart model, so that we can tune the heart model's parameters. We have clinical data that can be transformed into the components of the heart model. But there is one heart model's components that is not available: the myocardial fiber orientations. We don’t want to introduce new equipment or new procedures to the current ablation system. Therefore, we would like to find a way to compensate for the lack of fiber data. To do that, we need to first learn the effects of fiber on activation patterns.</p>
+
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/fiber_not_available.PNG" style="width: 70%;">
+            </div>
+            
+            <p>We ran experiments on slab tissue. We varied the fiber angle in between endocardium and epicardium, we also varied the activation wave direction, creating a total of 50 scenarios. The results show that fiber has a stronger effect on conduction velocity when endocardium and epicardium fiber orientations are the same.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/angle_difference_vs_cv.PNG" style="width: 90%;">
+            </div>
+            
+            <p>We also found that the thickness ratio in between endocardium and epicardium can affect conduction velocity. As shown in these two sets of experiments, we see that an imbalanced thickness ratio results in a difference of the activation wavefront locations.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/thickness_ratio_vs_cv.PNG" style="width: 90%;">
+            </div>
+            
+            <p>The observations of the slab tissue experiments show that fiber orientations could have a large effect on activation patterns. However, the left atrium is different from a slab tissue. Fiber organizations in the left atrium are much more complex. The question we have now is: Whether observations from the slab experiments still hold true in the left atrium. To investigate fiber effects on activation patterns on the left atrium, we utilize an ex-vivo fiber database. We register 7 different patient’s fiber data onto the same left atrium. And run the same set of arrhythmias to observe the differences in activation patterns.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/fiber_effect_experiments.PNG" style="width: 90%;">
+            </div>
+            
+            <p>To register fiber data from one mesh to another mesh. We first apply a non-rigid iterative closest point transformation to the mesh. As illustrated here, the magenta mesh is morphed into the shape of the blue mesh. Then we apply a reference frame transformation to the fiber vectors.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/fiber_registration.PNG" style="width: 90%;">
+            </div>
+            
+            <p>Now, let’s look at the results of the arrhythmia simulations with different fibers. The figures in the same row have the same arrhythmia, the difference is in the fiber data. We can see that fiber does not result in large differences in activation patterns. The average activation time difference is 7.8 ms. Or 4.3% of the activation time range.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/lat_maps_examples.PNG" style="width: 90%;">
+            </div>
+            
+            <p>When we take a closer look, we find that fibers do affect local activation patterns. If activation direction is perpendicular to fiber orientation, conduction is slower. If activation direction is parallel to fiber orientation, conduction is faster.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/local_effect.PNG" style="width: 90%;">
+            </div>
+            
+            <p>However, fiber's local effect does not accumulate. Because fiber organizations in the left atrium vary a lot. As shown in figure (c) below, for an activation travels along the red arrow, its speed can increase and decrease, but the overall speed will not change much. We called this the cancellation effect.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/cancellation_effect.PNG" style="width: 90%;">
+            </div>
+            
+            <p>Figure (a) below shows a path from point A to point B. The conduction speed along this path increases and decreases due to different fiber organizations. But the average conduction speeds are similar regardless of different fiber organizations.</p>
+            
+            <div style="text-align: center;">
+                <img src="assets/fiber_effect/cv.PNG" style="width: 60%;">
+            </div>
+        </td>
+    </tr>
+</table>
+
+<footer-component></footer-component>
+</body>
+</html>
