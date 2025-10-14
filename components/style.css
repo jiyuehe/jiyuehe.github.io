@@ -29,21 +29,8 @@ td {
   padding: 5px;
 }
 
-/* GALLERY */
-div.gallery img {
-  width: 100%;
-}
-
-.responsive {
-  padding: 0 20px;
-  float: left;
-  width: 35%;
-}
-
-@media only screen and (max-width: 800px) {
-  .responsive {
-    width: 90%;
-  }
+p {
+  margin-bottom: 20px; /* adds space after each paragraph */
 }
 
 /* dropdown menu */
