@@ -23,8 +23,6 @@ class Navigation extends HTMLElement {
                 <a href="fiber_effect.html">Myocardial Fiber Effects on Arrhythmia Patterns</a>
 
                 <a href="clinical_processing_arrhythmia_detection.html">Clinical Data Processing and Arrhythmia Source Detection</a>
-
-                <a href="statistical_activation_mapping.html">Atrial Fibrillation Statistical Activation Mapping</a>
               </div>
             </div> 
 
