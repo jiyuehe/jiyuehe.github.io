@@ -15,7 +15,7 @@ class Footer extends HTMLElement {
 
           <tr>
             <td>
-              <p align="center">Copyright &#169; Jay He. All Rights Reserved.</p>
+              <p align="center">Copyright &#169; Jiyue He. All Rights Reserved.</p>
             </td>
           </tr>
         </table>
