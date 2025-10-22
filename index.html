@@ -138,7 +138,7 @@
 
   <tr>
     <td width="1000" colspan="2">
-      <img src="./assets/cyber_physical_systems_modeling/model_parameters.PNG"  class="wrap-image"/>
+      <img src="./assets/cyber_physical_systems_modeling/feature.PNG"  class="wrap-image"/>
 
       <p>I developed a patient-specific computational heart model to simulate electrical activation patterns and assist physicians during atrial arrhythmia ablation procedures. The framework constructs a digital twin of the patient’s left atrium by extracting clinical data to tune model parameters and simulate the arrhythmias. The heart model is spatially discretized using a 3D mesh-to-Cartesian transformation and temporally discretized via the explicit Euler method, incorporating no-flux boundary conditions. To address the absence of fiber orientation data, diffusion coefficients are locally tuned through an iterative process that minimizes discrepancies between simulated and patient activation times. This tuning approach effectively captures scar regions and conduction heterogeneity. Validation on 15 patient datasets demonstrated high accuracy. These results indicate that the patient-specific digital heart can accurately reproduce arrhythmic behavior, providing a promising foundation for improving ablation planning and guidance.</p>
     </td>
@@ -152,7 +152,7 @@
   </tr>
   <tr>  
     <td width="1000" colspan="2">
-      <img src="./assets/fiber_effect/cancellation_effect.PNG"  class="wrap-image"/>
+      <img src="./assets/fiber_effect/feature.PNG"  class="wrap-image"/>
 
       <p>I investigated the influence of myocardial fiber orientation on electrical activation patterns. Since clinical ablation systems do not provide myocardial fiber data, I explored methods to compensate for this limitation without requiring additional imaging or procedures. Initial experiments on slab tissue models examined 50 scenarios with varying fiber angles and activation directions, revealing that conduction velocity is more sensitive when endocardial and epicardial fiber orientations are aligned and when the thickness ratio between these layers is imbalanced. To evaluate whether these findings extend to the left atrium, I utilized an ex-vivo fiber database, registering fiber datasets from seven atria onto a common atrial geometry and simulating identical arrhythmias. The results showed that, while global activation patterns were largely preserved across different fiber configurations, fibers produced notable local effects. However, due to the complex and heterogeneous fiber organization in the atrium, these local effects canceled out globally. This cancellation effect suggests that patient-specific fiber orientation has limited impact on overall activation timing, supporting the feasibility of accurate digital heart simulations even without direct fiber data.</p>
     </td>
