@@ -23,12 +23,16 @@
 
     <tr>
         <td>
+            <h3 style="font-weight:normal; color: #00b7ff;">Clinical Data Files</h3>
+
             <p>These are examples of clinical data files. These files include 3D triangular mesh, catheter locations, electrograms, and others. Clinical data are exported from the mapping system. Atrium mesh and electrograms require further processing.</p>
 
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/clinical_data.PNG" style="width: 90%;">
             </div>
             
+            <h3 style="font-weight:normal; color: #00b7ff;">Atrium Geometry</h3>
+
             <p>This is how atrium geometry is created. As the catheter sweeps through the inside of the left atrium, the atrium geometry forms gradually.</p>
             
             <div style="text-align: center;">
@@ -54,6 +58,8 @@
                 <img src="assets/clinical_data_processing/fill_hole.PNG" style="width: 90%;">
             </div>
             
+            <h3 style="font-weight:normal; color: #00b7ff;">Electrogram Noise Removal</h3>
+
             <p>Atrial electrograms often contain ventricle QRS interference. A QRS removal algorithm was developed. First, the median signal is subtracted from each electrogram. Then, QRS timing is identified on the 12 surface electrograms and refined using coronary sinus electrograms. Finally, around the QRS timing, QRS templates of the mapping catheter electrograms are created and subtracted.</p>
             
             <div style="text-align: center;">
@@ -66,6 +72,8 @@
                 <img src="assets/clinical_data_processing/recording_2_QRS_subtration.PNG" style="width: 90%;">
             </div>
             
+            <h3 style="font-weight:normal; color: #00b7ff;">Activation Timing Detection</h3>
+
             <p>After electrogram noise is removed, an activation timing detection algorithm is applied. First, the original electrogram is processed, taking its absolute value, smoothing it, and finding rough activation timings. Then, around these rough timings, a median template of the electrogram is created. Next, cross-correlation between the template and the electrogram identifies peaks of the correlation coefficients. Long intervals are checked to determine if additional activations need to be added.</p>
             
             <div style="text-align: center;">
@@ -78,6 +86,8 @@
                 <img src="assets/clinical_data_processing/2_activation_timing.PNG" style="width: 60%;">
             </div>
             
+            <h3 style="font-weight:normal; color: #00b7ff;">Electroanatomical Mapping</h3>
+
             <p>Electroanatomical maps are valuable tools for guiding ablations. The process starts with patient data processing. From the electrogram, voltage, dominant frequency, fractionation, and synchrony can be derived. Activation timings are detected, providing local activation time and cycle length. From activation timing, an activation movie is created, enabling derivation of conduction velocity and phase singularity. These values can be interpolated to the atrium mesh and converted to color, forming a map.</p>
             
             <div style="text-align: center;">
