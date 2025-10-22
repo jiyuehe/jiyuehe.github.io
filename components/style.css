@@ -96,7 +96,7 @@ p {
 
 .wrap-image {
   float: left; /* Places the image on the left side */
-  margin: 10px 10px 10px 0; /* Adds space around the image (top, right, bottom, left) */
-  width: 280px; /* Optional: set a consistent image width */
+  margin: 5px 5px 5px 0; /* Adds space around the image (top, right, bottom, left) */
+  width: 220px; /* Optional: set a consistent image width */
   height: auto; /* Keep image proportions */
 }
