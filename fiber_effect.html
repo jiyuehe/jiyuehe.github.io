@@ -23,13 +23,17 @@
 
     <tr>
         <td>
-            <p>The heart model needs to be patient-specific. Therefore, clinical data are processed and fed into the heart model to tune its parameters. Clinical data can be transformed into the components of the heart model. However, one component is not available: the myocardial fiber orientations. Introducing new equipment or procedures to the current ablation system is undesirable. Therefore, a method is needed to compensate for the lack of fiber data. To achieve this, it is necessary to first study the effects of fibers on activation patterns.</p>
+            <h3 style="font-weight:normal; color: #00b7ff;">The Lack of Fiber Data</h3>
+
+            <p>The heart model needs to be patient-specific. Therefore, clinical data are processed and fed into the heart model to tune its parameters. Clinical data can be transformed into the components of the heart model. However, one component is not available: the myocardial fiber orientations. Introducing new equipment or procedures to the current ablation system is undesirable. A method is needed to compensate for the lack of fiber data. To achieve this, it is necessary to first study the effects of fibers on activation patterns.</p>
 
             <div style="text-align: center;">
                 <img src="assets/fiber_effect/fiber_not_available.PNG" style="width: 70%;">
             </div>
             
-            <p>Experiments were conducted on slab tissue. The fiber angle between endocardium and epicardium was varied, and the activation wave direction was also altered, creating a total of 50 scenarios. The results show that fibers have a stronger effect on conduction velocity when endocardium and epicardium fiber orientations are the same.</p>
+            <h3 style="font-weight:normal; color: #00b7ff;">Slab Tissue Experiments</h3>
+
+            <p>Experiments were conducted on slab tissue. The fiber angle between endocardium and epicardium was varied, and the activation wave direction was also altered, creating a total of fifty scenarios. The results show that fibers have a stronger effect on conduction velocity when endocardium and epicardium fiber orientations are the same.</p>
             
             <div style="text-align: center;">
                 <img src="assets/fiber_effect/angle_difference_vs_cv.PNG" style="width: 90%;">
@@ -41,7 +45,11 @@
                 <img src="assets/fiber_effect/thickness_ratio_vs_cv.PNG" style="width: 90%;">
             </div>
             
-            <p>The observations from the slab tissue experiments indicate that fiber orientations can have a significant effect on activation patterns. However, the left atrium differs from slab tissue. Fiber organization in the left atrium is much more complex. The question that arises is whether the observations from the slab experiments still hold true in the left atrium. To investigate fiber effects on activation patterns in the left atrium, an ex-vivo fiber database is utilized. Fiber data from seven different patients are registered onto the same left atrium, and the same set of arrhythmias is simulated to observe differences in activation patterns.</p>
+            <p>The observations from the slab tissue experiments indicate that fiber orientations can have a significant effect on activation patterns. However, the left atrium differs from slab tissue. Fiber organization in the left atrium is much more complex. The question that arises is whether the observations from the slab experiments still hold true in the left atrium.</p>
+            
+            <h3 style="font-weight:normal; color: #00b7ff;">Left Atrium Fiber Simulations</h3>
+
+            <p>To investigate fiber effects on activation patterns in the left atrium, an ex-vivo fiber database is utilized. Fiber data from seven different patients are registered onto the same left atrium, and the same set of arrhythmias is simulated to observe differences in activation patterns.</p>
             
             <div style="text-align: center;">
                 <img src="assets/fiber_effect/fiber_effect_experiments.PNG" style="width: 90%;">
@@ -53,12 +61,14 @@
                 <img src="assets/fiber_effect/fiber_registration.PNG" style="width: 90%;">
             </div>
             
-            <p>The results of the arrhythmia simulations with different fibers are shown below. Figures in the same row represent the same arrhythmia, with differences only in the fiber data. The results indicate that fibers do not produce large differences in activation patterns. The average activation time difference is 7.8 ms, or 4.3% of the activation time range.</p>
+            <p>The results of the arrhythmia simulations with different fibers are shown below. Figures in the same row represent the same arrhythmia, with differences only in the fiber data. The results indicate that fibers do not produce large differences in activation patterns. The average activation time difference is 7.8 ms, or 4.3 percent of the activation time range.</p>
             
             <div style="text-align: center;">
                 <img src="assets/fiber_effect/lat_maps_examples.PNG" style="width: 90%;">
             </div>
             
+            <h3 style="font-weight:normal; color: #00b7ff;">The Cancellation Effect</h3>
+
             <p>A closer look reveals that fibers do affect local activation patterns. When activation direction is perpendicular to fiber orientation, conduction is slower. When activation direction is parallel to fiber orientation, conduction is faster.</p>
             
             <div style="text-align: center;">
