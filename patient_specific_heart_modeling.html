@@ -23,19 +23,23 @@
 
     <tr>
         <td>
-            <p>The aim is to develop a digital twin of patient's heart which can simulate its electrical activation behoviors, to assist physicians during the atrial arrhythmia ablation surgeries. There are a lot of challenges, for more details please refer to the page of <u><a href="atrial_fibrillation_challenges.html">Atrial Fibrillation Ablation Challenges</a></u>.</p> 
+            <h3 style="font-weight:normal; color: #00b7ff;">Overview of the Process</h3>
+
+            <p>The aim is to develop a digital twin of a patient's heart that can simulate its electrical activation behaviors, to assist physicians during atrial arrhythmia ablation surgeries.</p> 
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/heart_model_for_arrhythmia_ablation.jpg" style="width: 90%;">
             </div>
 
-            <p>The overview process is: extract patient data to tune heart model parameters, initiate arrhythmia according to patient data, then solve the heart model equations to simulate patient-specific arrhythmias.</p>
+            <p>The process begins by extracting patient data to tune heart model parameters, followed by initiating arrhythmia according to patient data. Then the heart model equations are solved to simulate patient-specific arrhythmias.</p>
 
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/heart_modeling.PNG" style="width: 90%;">
             </div>
 
-            <p>Below are the heart model equations. They calculate the activation action potentials. There are parameters that affect the shape of the action potential, and parameters that affect the activation propagation. These parameters are tuned locally. Every vertex of the mesh has its own set of parameter values.</p>
+            <h3 style="font-weight:normal; color: #00b7ff;">Heart Model Equations</h3>
+
+            <p>The heart model equations calculate activation action potentials. Some parameters affect the shape of the action potential, while others affect activation propagation. These parameters are tuned locally. Each vertex of the mesh has its own set of parameter values.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/model_parameters.PNG" style="width: 80%;">
@@ -47,17 +51,19 @@
                 <img src="assets/cyber_physical_systems_modeling/create_nodes.PNG" style="width: 80%;">
             </div>
 
-            <p>The heart model equations are discretized in time using the explicit Euler method. With some initial values at time 0, the values of the next time step can be computed.</p>
+            <p>The heart model equations are discretized in time using the explicit Euler method. With some initial values at time zero, the values for the next time step can be computed.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/discretize_time.PNG" style="width: 60%;">
             </div>
 
-            <p>To compute the diffusion term, no-flux boundary conditions are applied, and used a 19-node stencil. The action potential of the red node will be diffused into its 18 neighbors according to the diffusion coefficient matrices.</p>
+            <p>To compute the diffusion term, no-flux boundary conditions are applied. A 19-node stencil is used, where the action potential of the red node is diffused into its 18 neighbors according to the diffusion coefficient matrices.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/compute_diffusion_term.PNG" style="width: 90%;">
             </div>
+
+            <h3 style="font-weight:normal; color: #00b7ff;">Examples of Arrhythmia Simulations</h3>
 
             <p>Here are examples of arrhythmia simulations. Focal arrhythmia: Activation originates at an abnormal location. Rotor arrhythmia: Spiral waves cause irregular heartbeat. Zigzag propagation: Complex scar distributions create activation tunnels of various conduction velocities. Atrial fibrillation: Chaotic activation waves that have no organizations.</p>
             
@@ -65,15 +71,21 @@
                 <img src="assets/cyber_physical_systems_modeling/arrhythmia_simulations.gif" style="width: 70%;">
             </div>
 
+            <h3 style="font-weight:normal; color: #00b7ff;">Diffusion Coefficient Tuning</h3>
+
             <p>The solution to the lack of fiber data is to compensate for it through diffusion coefficient tuning. Tuning is challenging: 1) Heart model is nonlinear. 2) Diffusion is influencing the neighbor nodes, not the immediate vicinities. 3) Sensitive to the initial guess values, adjustment steps, ending criteria, etc.</p>
             
-            <p>An optimization process was developed to overcome the tuning challenges. Patient data are processed to obtain the true local activation times. A simulation is then run with an initial guess of diffusion values, and the simulation results are processed to obtain the simulated local activation times. These two sets of activation times are compared and the diffusion values are updated according to this comparison. New simulations are run and diffusion values are adjusted in each iteration. The tuning is done when the difference between patient activation time and simulation activation time is minimized. To accelerate the tuning process, the relation between conduction velocity and diffusion coefficient is exploited, which reduces the number of iterations required to reach the optimum. As illustrated in the figure below, scars are also accounted for. The figure on the left shows scar regions in red, and the figure on the right, shows a diffusion coefficient map, where red represents low conductivity. The red regions between these two figures are almost the same. Which means the tuning is accurate.</p>
+            <p>An optimization process was developed to overcome these challenges. Patient data are processed to obtain the true local activation times. A simulation is then run with an initial guess of diffusion values, and simulated local activation times are extracted. The two sets of activation times are compared, and diffusion values are updated accordingly. This iterative process continues until the difference between patient activation times and simulation activation times is minimized.</p>
+                
+            <p>To accelerate tuning, the relationship between conduction velocity and diffusion coefficient is exploited, reducing the number of iterations required to reach the optimum. Scar regions are accounted for in the process. In the figure below, scar regions are shown in red on the left, and the diffusion coefficient map is shown on the right, with red representing low conductivity. The red regions in both figures are almost identical, demonstrating accurate tuning.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/diffusion_tuning.PNG" style="width: 90%;">
             </div>
             
-            <p>The model achieved high accuracy in simulating arrhythmias. Experiments were run on seven patients’ left atria. For focal arrhythmia, an activation time accuracy of 96% was achieved.</p>
+            <h3 style="font-weight:normal; color: #00b7ff;">Model Accuracy</h3>
+
+            <p>The model achieved high accuracy in simulating arrhythmias. Experiments were conducted on seven patients’ left atria. For focal arrhythmia, an activation time accuracy of 96% was achieved.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/focal_lat_map.PNG" style="width: 90%;">
@@ -85,7 +97,7 @@
                 <img src="assets/cyber_physical_systems_modeling/rotor_lat_map.PNG" style="width: 90%;">
             </div>
             
-            <p>The model was tested with 15 patient datasets to demonstrate its capability of accurately reproducing patient arrhythmias. The figures below show the results of 7 atrial tachycardia maps. An average activation time error of 10.97 ms was achieved, with an average correlation of 0.81.</p>
+            <p>The model was further tested with 15 patient datasets to demonstrate the ability to reproduce patient arrhythmias accurately. The figures below show the results of 7 atrial tachycardia maps. An average activation time error of 10.97 ms was achieved, with an average correlation of 0.81.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/patient_sim_lat_maps_at.PNG" style="width: 90%;">
