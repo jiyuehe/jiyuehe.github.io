@@ -29,7 +29,7 @@
                 <img src="assets/cyber_physical_systems_modeling/heart_model_for_arrhythmia_ablation.jpg" style="width: 90%;">
             </div>
 
-            <p>The overview process is: extract patient data to tune heart model parameters, next, initiate arrhythmia (the heart's initial state is also extracted from patient data), then solve the heart model equations to simulate patient-specific arrhythmias.</p>
+            <p>The overview process is: extract patient data to tune heart model parameters, initiate arrhythmia according to patient data, then solve the heart model equations to simulate patient-specific arrhythmias.</p>
 
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/heart_modeling.PNG" style="width: 90%;">
@@ -41,19 +41,19 @@
                 <img src="assets/cyber_physical_systems_modeling/model_parameters.PNG" style="width: 80%;">
             </div>
 
-            <p>To solve the heart model equations, we discretize the left atrium in space. We transform the 3D triangular mesh into Cartesian nodes. For a mesh vertex, Cartesian nodes within a radius are created. And for every vertex, we create the associated cartesian nodes. As a result, the Cartesian nodes will wrap around the mesh.</p>
+            <p>To solve the heart model equations, the left atrium is spatially discretized by transforming the 3D triangular mesh into a set of Cartesian nodes. For each mesh vertex, Cartesian nodes are generated within a specified radius. Repeating this process for all vertices produces a distribution of Cartesian nodes that wraps around the mesh surface.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/create_nodes.PNG" style="width: 80%;">
             </div>
 
-            <p>We discretize the heart model equations in time using the explicit Euler method. With some initial values at time 0, we can compute the values of the next time step.</p>
+            <p>The heart model equations are discretized in time using the explicit Euler method. With some initial values at time 0, the values of the next time step can be computed.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/discretize_time.PNG" style="width: 60%;">
             </div>
 
-            <p>To compute the diffusion term, we assumed no-flux boundary conditions, and used a 19-node stencil. The action potential of the red node will be diffused into its 18 neighbors according to the diffusion coefficient matrices.</p>
+            <p>To compute the diffusion term, no-flux boundary conditions are applied, and used a 19-node stencil. The action potential of the red node will be diffused into its 18 neighbors according to the diffusion coefficient matrices.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/compute_diffusion_term.PNG" style="width: 90%;">
@@ -65,33 +65,33 @@
                 <img src="assets/cyber_physical_systems_modeling/arrhythmia_simulations.gif" style="width: 70%;">
             </div>
 
-            <p>Our solution to the lack of fiber data is to compensate that with a diffusion coefficient tuning. Tuning is challenging: 1) Heart model is nonlinear. 2) Diffusion is influencing the neighbor nodes, not the immediate vicinities. 3) Sensitive to the initial guess values, adjustment steps, ending criteria, etc.</p>
+            <p>The solution to the lack of fiber data is to compensate for it through diffusion coefficient tuning. Tuning is challenging: 1) Heart model is nonlinear. 2) Diffusion is influencing the neighbor nodes, not the immediate vicinities. 3) Sensitive to the initial guess values, adjustment steps, ending criteria, etc.</p>
             
-            <p>We developed an optimization process to overcome the tuning challenges. We process the patient data to obtain the true local activation times. Then we run a simulation with some initial guess diffusions, and process the simulation result to obtain the simulated local activation times. These two sets of activation times are compared and the diffusion values are updated according to this comparison. New simulations are run and diffusion values are adjusted in each iteration. The tuning is done when the difference between patient activation time and simulation activation time is minimized. To make the tuning faster, we exploit the relation between conduction velocity and diffusion coefficient, which reduces the number of iterations needed to reach the optimum. As illustrated in the figure below, we can see that scars are taken care of too. The figure on the left shows scar regions in red, and the figure on the right, shows a diffusion coefficient map, where red represents low conductivity. The red regions between these two figures are almost the same. Which means the tuning is accurate.</p>
+            <p>An optimization process was developed to overcome the tuning challenges. Patient data are processed to obtain the true local activation times. A simulation is then run with an initial guess of diffusion values, and the simulation results are processed to obtain the simulated local activation times. These two sets of activation times are compared and the diffusion values are updated according to this comparison. New simulations are run and diffusion values are adjusted in each iteration. The tuning is done when the difference between patient activation time and simulation activation time is minimized. To accelerate the tuning process, the relation between conduction velocity and diffusion coefficient is exploited, which reduces the number of iterations required to reach the optimum. As illustrated in the figure below, scars are also accounted for. The figure on the left shows scar regions in red, and the figure on the right, shows a diffusion coefficient map, where red represents low conductivity. The red regions between these two figures are almost the same. Which means the tuning is accurate.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/diffusion_tuning.PNG" style="width: 90%;">
             </div>
             
-            <p>Our model achieved high accuracy of simulating arrhythmias. We ran experiments on 7 patient's left atrium. For focal arrhythmia, we achieved activation time accuracy of 96%.</p>
+            <p>The model achieved high accuracy in simulating arrhythmias. Experiments were run on seven patients’ left atria. For focal arrhythmia, an activation time accuracy of 96% was achieved.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/focal_lat_map.PNG" style="width: 90%;">
             </div>
             
-            <p>For rotor arrhythmia, we achieved activation time accuracy of 93%.</p>
+            <p>For rotor arrhythmia, an activation time accuracy of 93% was achieved.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/rotor_lat_map.PNG" style="width: 90%;">
             </div>
             
-            <p>We tested our model with 15 patient data, to show that our model is capable of accurately reproducing patient arrhythmias. The figures below are the results of 7 atrial tachycardia maps. We achieved an average activation time error of 10.97 ms, with an average correlation of 0.81.</p>
+            <p>The model was tested with 15 patient datasets to demonstrate its capability of accurately reproducing patient arrhythmias. The figures below show the results of 7 atrial tachycardia maps. An average activation time error of 10.97 ms was achieved, with an average correlation of 0.81.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/patient_sim_lat_maps_at.PNG" style="width: 90%;">
             </div>
             
-            <p>These are the results of 8 sinus rhythm maps. We achieved an average activation time error of 5.47 ms, with an average correlation of 0.95. Sinus rhythm maps are helpful: Oftentimes, patient comes in the operating room in sinus rhythm, or will get  cardioversion into sinus rhythm, to acquire a voltage map for assisting pulmonary vein isolation.</p>
+            <p>These are the results of 8 sinus rhythm maps. An average activation time error of 5.47 ms was achieved, with an average correlation of 0.95. Sinus rhythm maps are helpful: oftentimes, a patient comes into the operating room in sinus rhythm, or undergoes cardioversion into sinus rhythm, to acquire a voltage map for assisting pulmonary vein isolation.</p>
             
             <div style="text-align: center;">
                 <img src="assets/cyber_physical_systems_modeling/patient_sim_lat_maps_sr.PNG" style="width: 90%;">
