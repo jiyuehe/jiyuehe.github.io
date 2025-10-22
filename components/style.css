@@ -94,6 +94,9 @@ p {
   display: block;
 }
 
-div.feature_image img {
-  width: 100%;
+.wrap-image {
+  float: left; /* Places the image on the left side */
+  margin: 10px 15px 10px 0; /* Adds space around the image (top, right, bottom, left) */
+  width: 300px; /* Optional: set a consistent image width */
+  height: auto; /* Keep image proportions */
 }

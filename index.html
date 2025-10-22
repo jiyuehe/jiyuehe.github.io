@@ -121,18 +121,10 @@
     </td>
   </tr>
   <tr>  
-    <td>
-        <div class="feature_image">
-          <img src="./assets/atrial_fibrillation_challenges/af.png"/>
-        </div>
-    </td>
-    <td>
-      A heart with atrial fibrillation experiences irregular electrical activations, leading to inefficient blood pumping. Ablation is the most common treatment. 
-    </td>
-  </tr>
-  <tr>
     <td width="1000" colspan="2">
-      <br />
+      <img src="./assets/atrial_fibrillation_challenges/af.png" class="wrap-image"/>
+
+      <p>Atrial fibrillation is a common and potentially fatal cardiac arrhythmia affecting millions worldwide. It is characterized by irregular heart activations that lead to inefficient blood flow. Catheter ablation, a minimally invasive treatment, restores normal rhythm by destroying diseased cardiac tissue under the guidance of 3D electroanatomical mapping systems. However, the ablation procedure faces significant challenges: mapping data are often temporally asynchronous and spatially non-uniform; signal artifacts and interpolation errors can distort activation maps; and identifying arrhythmia sources is complex, requiring careful investigation of voltage thresholds, time windows, and activation tracking. These factors contribute to a high recurrence rates which is around 45% within a year.Therefore, there is a need for more accurate and robust ablation guidance systems.</p>
     </td>
   </tr>
 
@@ -143,18 +135,12 @@
     </td>
   </tr>
   <tr>  
-    <td>
-        <div class="feature_image">
-          <img src="./assets/cyber_physical_systems_modeling/model_parameters.PNG"/>
-        </div>
-    </td>
-    <td>
-      Develop heart models to simulate patient-specific electrical activation behaviors, derive the discrete form the heart model equations for programming, show arrhythmia simulation examples, patient-specific parameter tuning, and validation with patient data.
-    </td>
-  </tr>
+
   <tr>
     <td width="1000" colspan="2">
-      <br />
+      <img src="./assets/cyber_physical_systems_modeling/model_parameters.PNG"  class="wrap-image"/>
+
+      <p>I developed a patient-specific computational heart model to simulate electrical activation patterns and assist physicians during atrial arrhythmia ablation procedures. The framework constructs a digital twin of the patient’s left atrium by extracting clinical data to tune model parameters and simulate the arrhythmias. The heart model is spatially discretized using a 3D mesh-to-Cartesian transformation and temporally discretized via the explicit Euler method, incorporating no-flux boundary conditions. To address the absence of fiber orientation data, diffusion coefficients are locally tuned through an iterative process that minimizes discrepancies between simulated and patient activation times. This tuning approach effectively captures scar regions and conduction heterogeneity. Validation on 15 patient datasets demonstrated high accuracy. These results indicate that the patient-specific digital heart can accurately reproduce arrhythmic behavior, providing a promising foundation for improving ablation planning and guidance.</p>
     </td>
   </tr>
 
@@ -165,18 +151,10 @@
     </td>
   </tr>
   <tr>  
-    <td>
-        <div class="feature_image">
-          <img src="./assets/fiber_effect/cancellation_effect.PNG"/>
-        </div>
-    </td>
-    <td>
-      Myocardial fiber data is not available for clinical arrhythmia ablation. We would like to find a way to compensate for the lack of fiber data.
-    </td>
-  </tr>
-  <tr>
     <td width="1000" colspan="2">
-      <br />
+      <img src="./assets/fiber_effect/cancellation_effect.PNG"  class="wrap-image"/>
+
+      <p>I investigated the influence of myocardial fiber orientation on electrical activation patterns. Since clinical ablation systems do not provide myocardial fiber data, I explored methods to compensate for this limitation without requiring additional imaging or procedures. Initial experiments on slab tissue models examined 50 scenarios with varying fiber angles and activation directions, revealing that conduction velocity is more sensitive when endocardial and epicardial fiber orientations are aligned and when the thickness ratio between these layers is imbalanced. To evaluate whether these findings extend to the left atrium, I utilized an ex-vivo fiber database, registering fiber datasets from seven atria onto a common atrial geometry and simulating identical arrhythmias. The results showed that, while global activation patterns were largely preserved across different fiber configurations, fibers produced notable local effects. However, due to the complex and heterogeneous fiber organization in the atrium, these local effects canceled out globally. This cancellation effect suggests that patient-specific fiber orientation has limited impact on overall activation timing, supporting the feasibility of accurate digital heart simulations even without direct fiber data.</p>
     </td>
   </tr>
 
@@ -187,18 +165,10 @@
     </td>
   </tr>
   <tr>  
-    <td>
-        <div class="feature_image">
-          <img src="./assets/clinical_data_processing/clinical_data_processing.png"/>
-        </div>
-    </td>
-    <td>
-      Describe the tools, user interfaces, and algorithms we developed for processing clinical data.
-    </td>
-  </tr>
-  <tr>
     <td width="1000" colspan="2">
-      <br />
+      <img src="./assets/clinical_data_processing/clinical_data_processing.png"  class="wrap-image"/>
+
+      <p>I developed a comprehensive framework for processing clinical data and detecting arrhythmia sources to assist atrial fibrillation ablation. Clinical data, including 3D atrial meshes, catheter locations, and electrograms, were first processed to correct mesh defects, standardize triangle sizes, and allow removal of pulmonary veins or other regions of interest. Electrograms were denoised using a QRS removal algorithm that preserves atrial activations, followed by an automated activation timing detection algorithm based on template matching and cross-correlation. I then generated electroanatomical maps, including voltage, local activation time, conduction velocity, and phase singularity maps. These maps visualize scar regions, activation patterns, and arrhythmia sources, guiding ablation. My system enables multi-feature integration to increase confidence in source identification. An interactive user interface allows exploration of the maps, supporting clinical decision-making during ablation procedures.</p>
     </td>
   </tr>
 </table>
