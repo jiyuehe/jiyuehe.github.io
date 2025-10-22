@@ -23,93 +23,93 @@
 
     <tr>
         <td>
-            <p>These are examples of clinical data files. These files include 3D triangular mesh, catheter locations, electrograms, and others. Clinical data are exported from the mapping system. Atrium mesh and electrograms need further processing.</p>
+            <p>These are examples of clinical data files. These files include 3D triangular mesh, catheter locations, electrograms, and others. Clinical data are exported from the mapping system. Atrium mesh and electrograms require further processing.</p>
 
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/clinical_data.PNG" style="width: 90%;">
             </div>
             
-            <p>This is how atrium geometry is created. As the catheter sweeps through the inside of the left atrium, the atrium geometry is created little by little.</p>
+            <p>This is how atrium geometry is created. As the catheter sweeps through the inside of the left atrium, the atrium geometry forms gradually.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/create_mesh.PNG" style="width: 90%;">
             </div>
             
-            <p>This 3D triangular mesh often has defects: For example, deep concave holes, intersecting triangular faces, non-referenced vertices and more. We developed an automated program to process it. The refined 3D mesh will not contain any defect, and the size of the triangles will be uniform.</p>
+            <p>This 3D triangular mesh often has defects, such as deep concave holes, intersecting triangular faces, non-referenced vertices, and more. An automated program was developed to process it. The refined 3D mesh contains no defects, and the size of the triangles is uniform.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/refine_geometry.PNG" style="width: 90%;">
             </div>
             
-            <p>We need to cut the pulmonary veins and the mitral valve. We developed a user interface for that. Here we have selected one pulmonary vein, which is marked blue, then we can remove it from the mesh.</p>
+            <p>Pulmonary veins and the mitral valve need to be cut. A user interface was developed for that. One pulmonary vein is selected, marked in blue, and then it can be removed from the mesh.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/cut_holes.PNG" style="width: 90%;">
             </div>
             
-            <p>This is the algorithm for selecting a region of tissue. First, some boundary vertices and a center vertex are selected. Then, the boundary vertices are linked to form the boundary line. Then, starting from the center point, it grows outwards until it hits the boundary. So that the vertices inside the boundary are selected. We can remove the selected vertices, that will be deleting them. Or, we can fill in new triangles to flatten that region. These figures in the bottom row show the process of filling in new triangles. By doing so, we can remove spiky or deep concave regions.</p>
+            <p>This is the algorithm for selecting a region of tissue. First, boundary vertices and a center vertex are selected. Then, the boundary vertices are linked to form the boundary line. Starting from the center point, the selection grows outward until it reaches the boundary, selecting all vertices inside. Selected vertices can be removed or new triangles can be filled in to flatten the region. The figures in the bottom row show the process of filling in new triangles, which removes spiky or deep concave regions.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/select_region.PNG" style="width: 90%;">
                 <img src="assets/clinical_data_processing/fill_hole.PNG" style="width: 90%;">
             </div>
             
-            <p>We often have atrial electrograms with ventricle QRS interference. We developed a QRS removal algorithm. First, the median signal is subtracted from each electrogram. Then, the QRS timing is found on the 12 surface electrograms, and the timing is refined using coronary sinus electrograms. Lastly, around the QRS timing, QRS templates of the mapping catheter electrograms are created and subtracted.</p>
+            <p>Atrial electrograms often contain ventricle QRS interference. A QRS removal algorithm was developed. First, the median signal is subtracted from each electrogram. Then, QRS timing is identified on the 12 surface electrograms and refined using coronary sinus electrograms. Finally, around the QRS timing, QRS templates of the mapping catheter electrograms are created and subtracted.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/QRS_removal_algorithm.PNG" style="width: 60%;">
             </div>
             
-            <p>These are examples of before and after QRS removal. We can see that in figure (b), the ventricle activations are removed, and all the atrium activations preserved.</p>
+            <p>These are examples before and after QRS removal. In figure (b), ventricle activations are removed while all atrium activations are preserved.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/recording_2_QRS_subtration.PNG" style="width: 90%;">
             </div>
             
-            <p>After electrogram noise is removed, we apply an activation timing detection algorithm. First, we process the original electrogram, take its absolute value and smooth it, and find the rough activation timings. Then around these rough timings, we create a median template of the electrogram. Next, cross correlation the template to the electrogram, and find the peaks of the correlation coefficients. Sometimes, we will find long intervals, we will check the correlation in that interval, and determine if additional activation needs to be added.</p>
+            <p>After electrogram noise is removed, an activation timing detection algorithm is applied. First, the original electrogram is processed, taking its absolute value, smoothing it, and finding rough activation timings. Then, around these rough timings, a median template of the electrogram is created. Next, cross-correlation between the template and the electrogram identifies peaks of the correlation coefficients. Long intervals are checked to determine if additional activations need to be added.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/activation_detection.PNG" style="width: 90%;">
             </div>
             
-            <p>The figure below shows the activation detection results.</p>
+            <p>The figure below shows activation detection results.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/2_activation_timing.PNG" style="width: 60%;">
             </div>
             
-            <p>Electroanatomical maps are very useful tools for guiding ablations. This is the process to create them. It starts with processing patient data. From the electrogram, we can derive voltage, dominant frequency, fractionation, and synchrony. Then we detect the activation timings, which we can derive local activation time and cycle length. From the activation timing, we can create an activation movie, which we can derive conduction velocity and phase singularity. Each of these derived values can be interpolated to the atrium mesh. Then we convert the values to color, and it becomes a map.</p>
+            <p>Electroanatomical maps are valuable tools for guiding ablations. The process starts with patient data processing. From the electrogram, voltage, dominant frequency, fractionation, and synchrony can be derived. Activation timings are detected, providing local activation time and cycle length. From activation timing, an activation movie is created, enabling derivation of conduction velocity and phase singularity. These values can be interpolated to the atrium mesh and converted to color, forming a map.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/create_map.PNG" style="width: 90%;">
                 <img src="assets/clinical_data_processing/voltage_map.PNG" style="width: 90%;">
             </div>
             
-            <p>Voltage map uses color to represent the electrogram amplitude. Low voltage signifies scar. Scars do not conduct well, and complex scar distributions can lead to complex activation waves. Therefore, complex scar regions are ablation targets. As shown in this clinical example. It is a pulmonary vein isolation redo patient. The pulmonary veins were isolated but some scars regrew to be conductive, therefore, new ablations are needed to create the line of block again.</p>
+            <p>Voltage map uses color to represent electrogram amplitude. Low voltage indicates scar. Scars conduct poorly, and complex scar distributions can lead to complex activation waves, making these regions targets for ablation. In this clinical example, a pulmonary vein isolation redo patient has regrown scars that require new ablations to recreate the line of block.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/voltage_map_ablation.PNG" style="width: 60%;">
             </div>
             
-            <p>Local activation time map uses color to represent the sequence of activation. Normal activation originates from the Bachmann Bundle region. If the earliest activation site is elsewhere, then we need to ablation it. As shown in this clinical example, the focal source is marked in red, and ablations have been given there.</p>
+            <p>Local activation time map uses color to represent the sequence of activation. Normal activation originates from the Bachmann Bundle region. If the earliest activation site is elsewhere, ablation may be needed. In this clinical example, the focal source is marked in red, and ablations were performed there.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/clinical_lat_map.PNG" style="width: 60%;">
             </div>
             
-            <p>Although the activation time map is very useful, it can be confusing too. The choice of the time window of interest can dramatically affect how the activation map looks. Here is an example to illustrate. Figure (a1) and (a2) are activation maps derived from the same activation. We can see that these 2 maps look very different, only because their choice of time window of interest are different. Physicians are trained to look for the red area as the focal source. But the woi choice is not always the best. This is not a problem for a computer program. All it needs is to find the local minima. This shows that our system can make what is invisible visible.</p>
+            <p>Although activation time maps are useful, they can be misleading. The choice of time window of interest dramatically affects the appearance of the map. Figure (a1) and (a2) show activation maps from the same activation, appearing very different due to differing time windows. Physicians look for red areas as focal sources, but the time window is not always optimal. A computer program only needs to find local minima, making what is invisible visible.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/focal_source_detection.PNG" style="width: 90%;">
             </div>
             
-            <p>Our system can provide various ablation guidance maps. Here are some examples. Having multiple maps of different features is helpful for identifying arrhythmia source locations. If several maps point to the same location, Then we will have high confidence that ablating that location can terminate at least the regional arrhythmia.</p>
+            <p>The system provides various ablation guidance maps. Multiple maps of different features help identify arrhythmia source locations. If several maps point to the same location, confidence is high that ablation at that location can terminate the regional arrhythmia.</p>
             
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/useful_maps.PNG" style="width: 90%;">
             </div>
 
-            <p>To display the various analysis results, I built an interactive user interface.</p>
+            <p>To display the analysis results, an interactive user interface was built.</p>
 
             <div style="text-align: center;">
                 <img src="assets/clinical_data_processing/atrial_fibrillation_analysis.png" style="width: 90%;">
